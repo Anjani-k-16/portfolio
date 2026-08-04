@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anjani Sree Harshita Kanchiraju | SDE & Cyber Security Portfolio</title>
+  <meta name="description" content="Portfolio of Anjani Sree Harshita Kanchiraju - Cyber Security Engineer & Full-Stack SDE specializing in secure backend systems, AI agents, and threat detection." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ANIMATED MONOGRAM SPLASH SCREEN LOADER (OPENING FLOW) -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-content">
+      <div class="monogram-wrapper">
+        <div class="monogram-ring"></div>
+        <div class="monogram-logo">A</div>
+      </div>
+      <div class="splash-title">ANJANI SREE HARSHITA KANCHIRAJU</div>
+      <div class="splash-subtitle">SDE &amp; CYBER SECURITY PORTFOLIO</div>
+      
+      <div class="splash-loader-bar">
+        <div id="splash-progress" class="splash-progress"></div>
+      </div>
+      <div id="splash-status" class="splash-status">[SYS_INIT] INITIALIZING ZERO-TRUST SYSTEM KERNEL...</div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC PARTICLE CANVAS BACKGROUND -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-code">&lt;AK/&gt;</span>
+        <span class="brand-name">Anjani Sree Harshita Kanchiraju</span>
+        <span class="brand-tag">SEC • SDE</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills Arsenal</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#credentials">Certifications</a>
+        <a href="#education">Education &amp; Leadership</a>
+        <a href="#contact" class="nav-btn">Contact</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="page-container">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Software Development Engineer &amp; Cyber Security Specialist</span>
+      </div>
+
+      <h1 class="hero-title">
+        Building Scalable Systems with <span class="highlight-cyan">Zero-Trust Security</span> &amp; <span class="highlight-green">Agentic AI</span>
+      </h1>
+
+      <div class="hero-typing-wrap">
+        Specializing in <span id="typing-text" class="typing-text"></span><span class="typing-cursor">|</span>
+      </div>
+
+      <p class="hero-subtitle">
+        I am <strong>Anjani Sree Harshita Kanchiraju</strong>, a Computer Science student at <strong>Shri Vishnu Engineering College for Women</strong> (CGPA 8.65). I engineer high-performance backend architectures, ML-powered phishing detection engines, and multi-agent LangGraph pipelines.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View Projects</a>
+        <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+        <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+
+      <div class="hero-metrics-grid">
+        <div class="metric-card">
+          <span class="metric-num">8.65 / 10</span>
+          <span class="metric-lbl">B.Tech CGPA (Cyber Sec)</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-num">9+</span>
+          <span class="metric-lbl">SDE &amp; Security Projects</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-num">Top 4.6%</span>
+          <span class="metric-lbl">WISER Quantum Program</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-num">President</span>
+          <span class="metric-lbl">Toastmasters Club</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="section-tag">&lt;ABOUT_ME&gt;</div>
+      <h2 class="section-title">Security-Driven Software Engineering</h2>
+
+      <div class="about-grid">
+        <div class="about-text-card">
+          <p>
+            My engineering philosophy centers around building robust software systems that prioritize both high performance and rigorous security. Specializing in <strong>Cyber Security</strong>, I integrate threat modeling, cryptography, and access controls directly into the software development lifecycle.
+          </p>
+          <p>
+            During my internships at <strong>Infosys Springboard</strong> and <strong>AptPath</strong>, I engineered deep learning medical abnormality detection models on 1,000+ X-ray images and built secure REST APIs using Django REST Framework backed by PostgreSQL optimization and Role-Based Access Control (RBAC).
+          </p>
+          <p>
+            Beyond technical development, I serve as the <strong>President of SVECW Speechweavers Toastmasters Club</strong>, driving communication excellence and team leadership across campus.
+          </p>
+
+          <div class="about-highlights">
+            <div class="h-item"><i class="fa-solid fa-shield-halved"></i> <span>Defensive Security &amp; OWASP Top 10</span></div>
+            <div class="h-item"><i class="fa-solid fa-lock"></i> <span>AES-256 GCM &amp; JWT Cryptography</span></div>
+            <div class="h-item"><i class="fa-solid fa-diagram-next"></i> <span>LangGraph Multi-Agent Workflows</span></div>
+            <div class="h-item"><i class="fa-solid fa-server"></i> <span>FastAPI, Node.js &amp; PostgreSQL Backend</span></div>
+          </div>
+        </div>
+
+        <div class="about-side-card">
+          <div class="profile-header">
+            <img src="cyber_sde_avatar.jpg" alt="Anjani Sree Harshita Kanchiraju" class="profile-img" />
+            <div>
+              <h3>Anjani Sree Harshita Kanchiraju</h3>
+              <p class="profile-sub">B.Tech CSE (Cyber Security) @ SVECW</p>
+              <p class="profile-loc"><i class="fa-solid fa-location-dot"></i> Bhimavaram, India</p>
+            </div>
+          </div>
+
+          <div class="quick-facts">
+            <div class="fact-row">
+              <span class="fact-lbl">Email:</span>
+              <span class="fact-val">anjanisreeharshita.kanchiraju@gmail.com</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Phone:</span>
+              <span class="fact-val">+91 9178944137</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">GitHub:</span>
+              <span class="fact-val">github.com/Anjani-k-16</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">LinkedIn:</span>
+              <span class="fact-val">linkedin.com/in/anjani-sree-harshita-kanchiraju</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS ARSENAL -->
+    <section id="skills" class="section bg-alt">
+      <div class="section-tag">&lt;TECHNICAL_ARSENAL&gt;</div>
+      <h2 class="section-title">Core Skills &amp; Domain Expertise</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="cat-title"><i class="fa-solid fa-shield-cat"></i> Cyber Security &amp; SecOps</div>
+          <div class="chips-wrap">
+            <span class="chip sec">OWASP Top 10</span>
+            <span class="chip sec">Network Security</span>
+            <span class="chip sec">Threat Analysis</span>
+            <span class="chip sec">Cryptography (AES-256)</span>
+            <span class="chip sec">Zero Trust Architecture</span>
+            <span class="chip sec">SIEM / SOC Fundamentals</span>
+            <span class="chip sec">Penetration Testing</span>
+            <span class="chip sec">CLM-SP LLM Security</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="cat-title"><i class="fa-solid fa-code"></i> Engineering &amp; Languages</div>
+          <div class="chips-wrap">
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">C</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Flask</span>
+            <span class="chip">Django REST Framework</span>
+            <span class="chip">React.js</span>
+            <span class="chip">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="cat-title"><i class="fa-solid fa-brain"></i> AI, ML &amp; Agentic Systems</div>
+          <div class="chips-wrap">
+            <span class="chip ai">LangGraph Agent Pipelines</span>
+            <span class="chip ai">RAG &amp; Vector Search</span>
+            <span class="chip ai">FAISS Vector DB</span>
+            <span class="chip ai">Groq LLM Integration</span>
+            <span class="chip ai">PyTorch &amp; Scikit-Learn</span>
+            <span class="chip ai">Computer Vision (VinDr-CXR)</span>
+            <span class="chip ai">Tesseract OCR</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="cat-title"><i class="fa-solid fa-database"></i> Databases &amp; Security Tools</div>
+          <div class="chips-wrap">
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Redis</span>
+            <span class="chip">SQLite</span>
+            <span class="chip">Wireshark</span>
+            <span class="chip">Nmap</span>
+            <span class="chip">Burp Suite</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Git / GitHub</span>
+            <span class="chip">Postman</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+      <div class="section-tag">&lt;EXPERIENCE_HISTORY&gt;</div>
+      <h2 class="section-title">Industry Internships</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-card">
+          <div class="card-header">
+            <div>
+              <h3 class="role-name">AI Developer Intern</h3>
+              <h4 class="company-name">Infosys Springboard</h4>
+            </div>
+            <div class="date-badge">Aug 2025 - Oct 2025 | Remote</div>
+          </div>
+          <div class="card-body">
+            <p class="role-desc"><strong>ClinScan AI Abnormality Detection:</strong> Built an AI medical diagnostic system using 1,000+ chest X-ray images (VinDr-CXR) to detect 6+ pathological conditions using multi-label deep learning models.</p>
+            <ul class="role-bullets">
+              <li>Integrated computer vision pipelines using PyTorch for automated image pre-processing.</li>
+              <li>Developed an interactive Streamlit UI for real-time diagnostic inference.</li>
+            </ul>
+            <div class="card-tags">
+              <span>Python</span><span>Deep Learning</span><span>Computer Vision</span><span>Streamlit</span><span>VinDr-CXR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-header">
+            <div>
+              <h3 class="role-name">Software Engineer Intern</h3>
+              <h4 class="company-name">AptPath</h4>
+            </div>
+            <div class="date-badge">Jul 2025 - Aug 2025 | Remote</div>
+          </div>
+          <div class="card-body">
+            <p class="role-desc"><strong>DelightAPI Enterprise System:</strong> Engineered RESTful APIs using Django REST Framework featuring token-based authentication and Role-Based Access Control (RBAC).</p>
+            <ul class="role-bullets">
+              <li>Optimized PostgreSQL database queries to reduce API response latency.</li>
+              <li>Built 5+ Streamlit UI modules for API-driven internal workflows.</li>
+            </ul>
+            <div class="card-tags">
+              <span>Django REST Framework</span><span>Python</span><span>PostgreSQL</span><span>Streamlit</span><span>RBAC</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS VAULT -->
+    <section id="projects" class="section bg-alt">
+      <div class="section-tag">&lt;PROJECTS_VAULT&gt;</div>
+      <h2 class="section-title">Featured Software &amp; Security Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: GoalFit Agent -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge ai"><i class="fa-solid fa-robot"></i> Agentic AI</span>
+            <h3>GoalFit Agent</h3>
+          </div>
+          <p class="p-desc">6-agent LangGraph pipeline engineered for personalized workout planning and real-time v1 -&gt; v2 adaptive AI coaching based on user feedback loops.</p>
+          <ul class="p-list">
+            <li>Asynchronous multi-agent coordination with Groq LLM</li>
+            <li>React frontend with FastAPI REST backend &amp; SQLite</li>
+          </ul>
+          <div class="p-tech"><span>React</span><span>FastAPI</span><span>LangGraph</span><span>SQLite</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 2: LinkPal -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge sec"><i class="fa-solid fa-shield"></i> Cyber Security</span>
+            <h3>LinkPal</h3>
+          </div>
+          <p class="p-desc">AI-powered malicious URL detector providing 0-100 threat risk scoring, brand impersonation detection, and real-time phishing protection via Chrome Extension.</p>
+          <ul class="p-list">
+            <li>Machine learning classification model for URL parameters</li>
+            <li>Chrome extension background script integration</li>
+          </ul>
+          <div class="p-tech"><span>React</span><span>Flask</span><span>Scikit-learn</span><span>Chrome Ext</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 3: SafeInbox -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge sec"><i class="fa-solid fa-envelope-shield"></i> Cyber Security</span>
+            <h3>SafeInbox</h3>
+          </div>
+          <p class="p-desc">ML-powered Gmail phishing detector featuring real-time email body &amp; header analysis with immediate threat warnings.</p>
+          <ul class="p-list">
+            <li><strong>97.00% accuracy &amp; 98.00% recall</strong> using TF-IDF &amp; Logistic Regression</li>
+            <li>Real-time alert overlays within Gmail UI</li>
+          </ul>
+          <div class="p-tech"><span>Python</span><span>TF-IDF</span><span>Logistic Regression</span><span>Flask</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 4: HashIn -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge sec"><i class="fa-solid fa-key"></i> Cyber Security</span>
+            <h3>HashIn</h3>
+          </div>
+          <p class="p-desc">Password security auditing platform with real-time entropy scoring, breach detection, and dictionary attack vulnerability checks.</p>
+          <ul class="p-list">
+            <li>Enforces <strong>k-Anonymity</strong> via HaveIBeenPwned API for safe breach checks</li>
+            <li>Entropy evaluation algorithms and user guidance</li>
+          </ul>
+          <div class="p-tech"><span>Python</span><span>JavaScript</span><span>HIBP API</span><span>Tailwind CSS</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 5: Syncly -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge sde"><i class="fa-solid fa-comments"></i> Full-Stack SDE</span>
+            <h3>Syncly</h3>
+          </div>
+          <p class="p-desc">High-concurrency real-time messaging application with low-latency WebSocket communication and end-to-end security layers.</p>
+          <ul class="p-list">
+            <li><strong>AES-256 GCM encrypted messaging</strong> with JWT auth</li>
+            <li>Socket.IO channels backed by Redis pub/sub pub-sub</li>
+          </ul>
+          <div class="p-tech"><span>Node.js</span><span>Socket.IO</span><span>Redis</span><span>React</span><span>Docker</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 6: Trackify -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge sde"><i class="fa-solid fa-briefcase"></i> Full-Stack SDE</span>
+            <h3>Trackify</h3>
+          </div>
+          <p class="p-desc">Full-stack job tracking platform featuring 9+ modules and an AI semantic resume-to-JD matching engine.</p>
+          <ul class="p-list">
+            <li>Sentence-Transformers semantic vector matching</li>
+            <li>FastAPI backend cached with Redis and PostgreSQL</li>
+          </ul>
+          <div class="p-tech"><span>FastAPI</span><span>React</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 7: ClinQuery -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge ai"><i class="fa-solid fa-notes-medical"></i> AI &amp; RAG</span>
+            <h3>ClinQuery</h3>
+          </div>
+          <p class="p-desc">Clinical PDF Q&amp;A system leveraging RAG, FAISS vector retrieval, and Groq LLM response generation.</p>
+          <ul class="p-list">
+            <li>Achieved <strong>0.97 faithfulness score</strong> on RAGAS framework</li>
+            <li>Sentence-Transformers embeddings with medical context grounding</li>
+          </ul>
+          <div class="p-tech"><span>Python</span><span>Streamlit</span><span>FAISS</span><span>Sentence-Transformers</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 8: Rx-Doc -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge ai"><i class="fa-solid fa-file-prescription"></i> AI &amp; OCR</span>
+            <h3>Rx-Doc</h3>
+          </div>
+          <p class="p-desc">Automated prescription parsing OCR + ML system with medical information extraction and anonymization.</p>
+          <ul class="p-list">
+            <li>Tesseract OCR + ML model for structured drug extraction</li>
+            <li>Multi-level synthetic data replacement for PII privacy</li>
+          </ul>
+          <div class="p-tech"><span>Python</span><span>Streamlit</span><span>OCR</span><span>Machine Learning</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <!-- Project 9: Academic-Avengers -->
+        <div class="p-card">
+          <div class="p-header">
+            <span class="p-badge sde"><i class="fa-solid fa-graduation-cap"></i> Web Dev</span>
+            <h3>Academic-Avengers</h3>
+          </div>
+          <p class="p-desc">Student productivity platform for attendance tracking, assignment scheduling, and GPA calculations.</p>
+          <ul class="p-list">
+            <li>Interactive task tracking dashboards and grade calculators</li>
+            <li>Built with clean semantic HTML, CSS, and Vanilla JavaScript</li>
+          </ul>
+          <div class="p-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          <div class="p-footer">
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CREDENTIALS & ACHIEVEMENTS -->
+    <section id="credentials" class="section">
+      <div class="section-tag">&lt;CREDENTIALS_AND_AWARDS&gt;</div>
+      <h2 class="section-title">Certifications &amp; Recognized Achievements</h2>
+
+      <div class="cred-grid">
+
+        <div class="cred-card highlight">
+          <div class="c-icon"><i class="fa-solid fa-atom"></i></div>
+          <div>
+            <h3>WISER Quantum Program</h3>
+            <span class="c-issuer">Top 3,000 / 65,000+ Participants</span>
+            <p>Selected nationwide for specialized quantum computing training and technical program tracks.</p>
+          </div>
+        </div>
+
+        <div class="cred-card">
+          <div class="c-icon sec"><i class="fa-solid fa-user-secret"></i></div>
+          <div>
+            <h3>CLM-SP LLM Security Professional</h3>
+            <span class="c-issuer">Red Team Leaders</span>
+            <p>Certified in AI red teaming, prompt injection defense, and LLM security auditing.</p>
+          </div>
+        </div>
+
+        <div class="cred-card">
+          <div class="c-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div>
+            <h3>Cisco CCNA Certification</h3>
+            <p class="c-issuer">Cisco Networking Academy</p>
+            <p>Completed full curriculum: ITN (Networks), SRWE (Switching &amp; Routing), and ENSA (Enterprise Networks).</p>
+          </div>
+        </div>
+
+        <div class="cred-card">
+          <div class="c-icon"><i class="fa-solid fa-award"></i></div>
+          <div>
+            <h3>IBM Qiskit &amp; NPTEL Quantum</h3>
+            <span class="c-issuer">Elite Status (Top 14%)</span>
+            <p>Earned Elite certification in Introduction to Quantum Computing.</p>
+          </div>
+        </div>
+
+        <div class="cred-card">
+          <div class="c-icon"><i class="fa-solid fa-shield-cat"></i></div>
+          <div>
+            <h3>NPTEL Ethical Hacking &amp; ML</h3>
+            <span class="c-issuer">NPTEL</span>
+            <p>Certified in Ethical Hacking, Network Security Analysis, and Machine Learning Fundamentals.</p>
+          </div>
+        </div>
+
+        <div class="cred-card">
+          <div class="c-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div>
+            <h3>Infosys Springboard Certifications</h3>
+            <span class="c-issuer">Infosys Springboard</span>
+            <p>Agentic AI for Beginners, Prompt Engineering, NLP using Python, Intro to Java &amp; Cloud.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & LEADERSHIP -->
+    <section id="education" class="section bg-alt">
+      <div class="section-tag">&lt;EDUCATION_AND_LEADERSHIP&gt;</div>
+      <h2 class="section-title">Education &amp; Speechweavers Toastmasters</h2>
+
+      <div class="edu-lead-grid">
+
+        <div class="edu-box">
+          <div class="box-title"><i class="fa-solid fa-graduation-cap"></i> Academic Degree</div>
+          <h3>B.Tech in Computer Science &amp; Engineering (Cyber Security)</h3>
+          <h4>Shri Vishnu Engineering College for Women | Bhimavaram, AP</h4>
+          <div class="cgpa-tag">CGPA: 8.65 / 10.0</div>
+          <p class="date-lbl">August 2021 - March 2025</p>
+          <div class="award-note"><i class="fa-solid fa-trophy"></i> 3rd Place - Technical Paper Presentation, CSE Department</div>
+        </div>
+
+        <div class="lead-box">
+          <div class="box-title"><i class="fa-solid fa-users-gear"></i> Leadership Experience</div>
+          <h3>SVECW Speechweavers Toastmasters Club</h3>
+          <ul class="lead-list">
+            <li>
+              <span class="role-tag pres">President</span> <span class="r-dates">(Jan 2025 - Jun 2025)</span>
+              <p>Leading executive committee, managing club operations, and championing campus public speaking.</p>
+            </li>
+            <li>
+              <span class="role-tag vp">VP Public Relations</span> <span class="r-dates">(Jul 2024 - Dec 2024)</span>
+              <p>Directed digital branding and event campaigns.</p>
+            </li>
+            <li>
+              <span class="role-tag vp">VP Membership</span> <span class="r-dates">(Jul 2025 - Dec 2025)</span>
+              <p>Managed membership drives and recruitment strategies.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+      <div class="section-tag">&lt;GET_IN_TOUCH&gt;</div>
+      <h2 class="section-title">Initiate Contact</h2>
+
+      <div class="contact-grid">
+        <div class="c-info">
+          <h3>Let's Connect</h3>
+          <p>I am open to full-time Software Engineering (SDE), Cyber Security, and AI Developer opportunities.</p>
+
+          <div class="c-channels">
+            <a href="mailto:anjanisreeharshita.kanchiraju@gmail.com" class="c-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span class="c-lbl">EMAIL</span>
+                <span class="c-val">anjanisreeharshita.kanchiraju@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/anjani-sree-harshita-kanchiraju" target="_blank" rel="noopener" class="c-item">
+              <i class="fa-brands fa-linkedin"></i>
+              <div>
+                <span class="c-lbl">LINKEDIN</span>
+                <span class="c-val">anjani-sree-harshita-kanchiraju</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener" class="c-item">
+              <i class="fa-brands fa-github"></i>
+              <div>
+                <span class="c-lbl">GITHUB</span>
+                <span class="c-val">Anjani-k-16</span>
+              </div>
+            </a>
+
+            <a href="tel:+919178944137" class="c-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span class="c-lbl">PHONE</span>
+                <span class="c-val">+91 9178944137</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="c-form-card">
+          <h3>Send a Direct Message</h3>
+          <form id="contact-form" onsubmit="event.preventDefault(); window.submitForm();">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="form-name" placeholder="Enter your full name..." required />
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" id="form-email" placeholder="name@domain.com..." required />
+            </div>
+            <div class="form-group">
+              <label>Message Payload</label>
+              <textarea id="form-msg" rows="4" placeholder="Hi Anjani, I would like to connect regarding..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div id="form-output" class="form-output"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-status-bar">
+        <span class="status-pulse"></span>
+        <span class="status-text">SYSTEM STATUS: ONLINE | ZERO-TRUST ARCHITECTURE ACTIVE</span>
+        <span class="status-sec">PORT 8080 • AES-256 GCM</span>
+      </div>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="brand-code">&lt;AK/&gt;</span> Anjani Sree Harshita Kanchiraju
+        </div>
+        <p class="footer-copy">&copy; 2026 Anjani Sree Harshita Kanchiraju. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/anjani-sree-harshita-kanchiraju" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:anjanisreeharshita.kanchiraju@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
