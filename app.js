@@ -20,11 +20,10 @@ function initSplashScreen() {
   if (!splashScreen || !progressEl || !statusEl) return;
 
   const logs = [
-    { progress: 20, msg: '[SYS_INIT] INITIALIZING ZERO-TRUST SYSTEM KERNEL...' },
-    { progress: 45, msg: '[SYS_LOAD] MOUNTING CYBER THREAT & PHISHING ENGINES...' },
-    { progress: 70, msg: '[SYS_AGENT] CONNECTING LANGGRAPH AGENT PIPELINES...' },
-    { progress: 90, msg: '[SYS_AUTH] AUTHENTICATING PROFILE: ANJANI SREE HARSHITA...' },
-    { progress: 100, msg: '[SYS_READY] ACCESS GRANTED. WELCOME.' }
+    { progress: 25, msg: 'Loading core system architecture...' },
+    { progress: 55, msg: 'Initializing engineering modules...' },
+    { progress: 85, msg: 'Preparing executive portfolio view...' },
+    { progress: 100, msg: 'Welcome to Anjani\'s Portfolio' }
   ];
 
   let currentStep = 0;
@@ -275,7 +274,7 @@ function initBackToTop() {
   });
 }
 
-/* 7. FORM SUBMISSION WITH CYBER TERMINAL RESPONSE */
+/* 7. FORM SUBMISSION WITH CLEAN EXECUTIVE RESPONSE */
 window.submitForm = function() {
   const nameInput = document.getElementById('form-name');
   const emailInput = document.getElementById('form-email');
@@ -286,7 +285,7 @@ window.submitForm = function() {
 
   if (out) {
     out.style.color = '#10b981';
-    out.textContent = `[SYS_OK] Message payload dispatched for ${name}. Encrypted via TLS 1.3. Anjani will get back to you shortly!`;
+    out.textContent = `Thank you ${name}! Your message has been received. I will get back to you shortly.`;
 
     if (nameInput) nameInput.value = '';
     if (emailInput) emailInput.value = '';
