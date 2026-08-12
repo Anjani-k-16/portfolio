@@ -952,6 +952,51 @@ body {
   font-size: 10.5px;
   color: var(--text-muted);
   height: 16px;
+  margin-bottom: 20px;
+}
+.splash-enter-btn {
+  background: rgba(0, 216, 246, 0.1);
+  border: 1px solid var(--cyber-cyan);
+  color: var(--cyber-cyan);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.splash-enter-btn:hover {
+  background: var(--cyber-cyan);
+  color: #0a0e17;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 216, 246, 0.4);
+}
+
+.hero-scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: var(--transition);
+}
+.hero-scroll-hint i {
+  animation: bounceDown 1.5s infinite;
+}
+.hero-scroll-hint:hover {
+  color: var(--cyber-cyan);
+}
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
 }
 
 /* ==================== PARTICLE CANVAS BACKGROUND ==================== */

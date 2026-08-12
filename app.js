@@ -16,36 +16,57 @@ function initSplashScreen() {
   const splashScreen = document.getElementById('splash-screen');
   const progressEl = document.getElementById('splash-progress');
   const statusEl = document.getElementById('splash-status');
+  const enterBtn = document.getElementById('splash-enter-btn');
 
   if (!splashScreen || !progressEl || !statusEl) return;
 
+  let isDismissed = false;
+
+  function dismissSplash() {
+    if (isDismissed) return;
+    isDismissed = true;
+    splashScreen.classList.add('fade-out');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Allow instant entering by clicking button or splash screen
+  if (enterBtn) {
+    enterBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dismissSplash();
+    });
+  }
+  splashScreen.addEventListener('click', dismissSplash);
+
   const logs = [
-    { progress: 25, msg: 'Loading core system architecture...' },
-    { progress: 55, msg: 'Initializing engineering modules...' },
-    { progress: 85, msg: 'Preparing executive portfolio view...' },
-    { progress: 100, msg: 'Welcome to Anjani\'s Portfolio' }
+    { progress: 20, msg: 'Loading core system architecture...' },
+    { progress: 50, msg: 'Initializing engineering modules...' },
+    { progress: 80, msg: 'Preparing executive portfolio view...' },
+    { progress: 100, msg: 'Welcome to Anjani Sree Harshita Kanchiraju\'s Portfolio' }
   ];
 
   let currentStep = 0;
 
   function runLoader() {
+    if (isDismissed) return;
+
     if (currentStep < logs.length) {
       const log = logs[currentStep];
       progressEl.style.width = `${log.progress}%`;
       statusEl.textContent = log.msg;
       currentStep++;
-      setTimeout(runLoader, 280);
+      setTimeout(runLoader, 750); // Gives ample time (3.5s) to view her name clearly
     } else {
+      if (enterBtn) enterBtn.style.opacity = '1';
       setTimeout(() => {
-        splashScreen.classList.add('fade-out');
-        document.body.style.overflow = 'auto';
-      }, 350);
+        dismissSplash();
+      }, 1200);
     }
   }
 
   // Prevent scroll while splash is active
   document.body.style.overflow = 'hidden';
-  setTimeout(runLoader, 150);
+  setTimeout(runLoader, 300);
 }
 
 /* 2. DYNAMIC PARTICLE CANVAS BACKGROUND (CYBER NODES & GRID) */
