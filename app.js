@@ -29,19 +29,18 @@ function initSplashScreen() {
     document.body.style.overflow = 'auto';
   }
 
-  // Allow instant entering by clicking button or splash screen
+  // Dismiss ONLY when clicking the Enter Portfolio button
   if (enterBtn) {
     enterBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       dismissSplash();
     });
   }
-  splashScreen.addEventListener('click', dismissSplash);
 
   const logs = [
-    { progress: 20, msg: 'Loading core system architecture...' },
-    { progress: 50, msg: 'Initializing engineering modules...' },
-    { progress: 80, msg: 'Preparing executive portfolio view...' },
+    { progress: 25, msg: 'Loading core system architecture...' },
+    { progress: 60, msg: 'Initializing engineering modules...' },
+    { progress: 85, msg: 'Preparing executive portfolio view...' },
     { progress: 100, msg: 'Welcome to Anjani Sree Harshita Kanchiraju\'s Portfolio' }
   ];
 
@@ -55,18 +54,21 @@ function initSplashScreen() {
       progressEl.style.width = `${log.progress}%`;
       statusEl.textContent = log.msg;
       currentStep++;
-      setTimeout(runLoader, 750); // Gives ample time (3.5s) to view her name clearly
+      setTimeout(runLoader, 1000); // 1s per step (4s total)
     } else {
-      if (enterBtn) enterBtn.style.opacity = '1';
+      if (enterBtn) {
+        enterBtn.classList.add('ready');
+      }
+      // Hold on screen for 2.5s after 100% so full name stays visible
       setTimeout(() => {
         dismissSplash();
-      }, 1200);
+      }, 2500);
     }
   }
 
   // Prevent scroll while splash is active
   document.body.style.overflow = 'hidden';
-  setTimeout(runLoader, 300);
+  setTimeout(runLoader, 200);
 }
 
 /* 2. DYNAMIC PARTICLE CANVAS BACKGROUND (CYBER NODES & GRID) */
