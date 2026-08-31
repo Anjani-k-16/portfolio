@@ -683,6 +683,19 @@
   </footer>
 
   <!-- Script -->
-  <script src="app.js"></script>
+  <script>
+    window.enterPortfolio = function(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      var splash = document.getElementById('splash');
+      if (splash) {
+        splash.classList.add('hide');
+        document.body.style.overflow = 'auto';
+      }
+    };
+  </script>
+  <script src="app.js?v=2.0"></script>
 </body>
 </html>
