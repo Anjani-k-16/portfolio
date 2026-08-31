@@ -178,24 +178,37 @@ body {
   transition: width 0.1s linear;
 }
 .splash-skip-btn {
-  background: rgba(0, 216, 246, 0.12);
+  background: rgba(0, 216, 246, 0.15);
   border: 1px solid var(--cyber-cyan);
   color: var(--cyber-cyan);
-  padding: 8px 20px;
-  border-radius: 20px;
+  padding: 10px 24px;
+  border-radius: 24px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  box-shadow: 0 0 15px rgba(0, 216, 246, 0.2);
 }
-.splash-skip-btn:hover {
+.splash-skip-btn.ready {
   background: var(--cyber-cyan);
   color: #060a12;
-  box-shadow: 0 0 20px rgba(0, 216, 246, 0.6);
+  box-shadow: 0 0 25px rgba(0, 216, 246, 0.7);
+  animation: splashBtnGlow 1.8s infinite;
+}
+@keyframes splashBtnGlow {
+  0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 216, 246, 0.6); }
+  50% { transform: scale(1.06); box-shadow: 0 0 35px rgba(0, 216, 246, 0.95); }
+  100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 216, 246, 0.6); }
+}
+.splash-skip-btn:hover {
+  background: #22e3ff;
+  color: #060a12;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 216, 246, 0.8);
 }
 
 /* ==================== CANVAS BACKGROUND ==================== */

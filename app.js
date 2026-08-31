@@ -37,11 +37,13 @@ function initSplash() {
 
     if (width >= 100) {
       clearInterval(interval);
-      setTimeout(hideSplash, 400);
+      if (skipBtn) {
+        skipBtn.classList.add('ready');
+      }
     }
   }, 40);
 
-  // Skip / Enter button click
+  // Enter button click listener (ONLY way to enter portfolio)
   if (skipBtn) {
     skipBtn.addEventListener('click', (e) => {
       e.stopPropagation();
