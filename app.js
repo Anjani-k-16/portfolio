@@ -12,7 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
   handleInitialHash();
 });
 
-/* 1. SPLASH SCREEN ANIMATION & FLOW */
+/* 1. SPLASH SCREEN ANIMATION & ENTRY FLOW */
+window.enterPortfolio = function(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  const splash = document.getElementById('splash');
+  if (splash) {
+    splash.classList.add('hide');
+    document.body.style.overflow = 'auto';
+  }
+};
+
 function initSplash() {
   const splash = document.getElementById('splash');
   const progressFill = document.getElementById('splash-progress-fill');
@@ -20,14 +32,8 @@ function initSplash() {
 
   if (!splash || !progressFill) return;
 
-  let isHidden = false;
-
-  function hideSplash() {
-    if (isHidden) return;
-    isHidden = true;
-    splash.classList.add('hide');
-    document.body.style.overflow = 'auto';
-  }
+  // Prevent scroll while splash screen is visible
+  document.body.style.overflow = 'hidden';
 
   // Animate progress bar fill over 2 seconds
   let width = 0;
@@ -42,18 +48,6 @@ function initSplash() {
       }
     }
   }, 40);
-
-  // Enter button click listener (ONLY way to enter portfolio)
-  if (skipBtn) {
-    skipBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      clearInterval(interval);
-      hideSplash();
-    });
-  }
-
-  // Prevent scroll while splash is visible
-  document.body.style.overflow = 'hidden';
 }
 
 /* 2. MULTI-PAGE NAVIGATION & TAB SWITCHING SYSTEM */
