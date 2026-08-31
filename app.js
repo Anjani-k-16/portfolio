@@ -35,19 +35,19 @@ function initSplash() {
   // Prevent scroll while splash screen is visible
   document.body.style.overflow = 'hidden';
 
-  // Animate progress bar fill over 2 seconds
+  // Animate progress bar fill over 1.2 seconds and reveal Hero Landing page
   let width = 0;
   const interval = setInterval(() => {
-    width += 4;
+    width += 5;
     if (progressFill) progressFill.style.width = width + '%';
 
     if (width >= 100) {
       clearInterval(interval);
-      if (skipBtn) {
-        skipBtn.classList.add('ready');
-      }
+      setTimeout(() => {
+        window.enterPortfolio();
+      }, 350);
     }
-  }, 40);
+  }, 25);
 }
 
 /* 2. MULTI-PAGE NAVIGATION & TAB SWITCHING SYSTEM */
