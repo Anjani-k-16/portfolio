@@ -1,77 +1,116 @@
 /* ==========================================================================
-   ANJANI SREE HARSHITA KANCHIRAJU - SDE & CYBER SECURITY PORTFOLIO SCRIPT
+   ANJANI SREE HARSHITA KANCHIRAJU - SDE & CYBER SECURITY PORTFOLIO
+   Multi-Page System Script & Interactive Canvas Engine
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initSplashScreen();
+  initSplash();
   initParticleCanvas();
   initTypingEffect();
-  initScrollReveals();
   initNav();
   initBackToTop();
+  handleInitialHash();
 });
 
-/* 1. ANIMATED MONOGRAM SPLASH SCREEN LOADER (OPENING FLOW) */
-function initSplashScreen() {
-  const splashScreen = document.getElementById('splash-screen');
-  const progressEl = document.getElementById('splash-progress');
-  const statusEl = document.getElementById('splash-status');
-  const enterBtn = document.getElementById('splash-enter-btn');
+/* 1. SPLASH SCREEN ANIMATION & FLOW */
+function initSplash() {
+  const splash = document.getElementById('splash');
+  const progressFill = document.getElementById('splash-progress-fill');
+  const skipBtn = document.getElementById('splash-skip-btn');
 
-  if (!splashScreen || !progressEl || !statusEl) return;
+  if (!splash || !progressFill) return;
 
-  let isDismissed = false;
+  let isHidden = false;
 
-  function dismissSplash() {
-    if (isDismissed) return;
-    isDismissed = true;
-    splashScreen.classList.add('fade-out');
+  function hideSplash() {
+    if (isHidden) return;
+    isHidden = true;
+    splash.classList.add('hide');
     document.body.style.overflow = 'auto';
   }
 
-  // Dismiss ONLY when clicking the Enter Portfolio button
-  if (enterBtn) {
-    enterBtn.addEventListener('click', (e) => {
+  // Animate progress bar fill over 2 seconds
+  let width = 0;
+  const interval = setInterval(() => {
+    width += 4;
+    if (progressFill) progressFill.style.width = width + '%';
+
+    if (width >= 100) {
+      clearInterval(interval);
+      setTimeout(hideSplash, 400);
+    }
+  }, 40);
+
+  // Skip / Enter button click
+  if (skipBtn) {
+    skipBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      dismissSplash();
+      clearInterval(interval);
+      hideSplash();
     });
   }
 
-  const logs = [
-    { progress: 25, msg: 'Loading core system architecture...' },
-    { progress: 60, msg: 'Initializing engineering modules...' },
-    { progress: 85, msg: 'Preparing executive portfolio view...' },
-    { progress: 100, msg: 'Welcome to Anjani Sree Harshita Kanchiraju\'s Portfolio' }
-  ];
-
-  let currentStep = 0;
-
-  function runLoader() {
-    if (isDismissed) return;
-
-    if (currentStep < logs.length) {
-      const log = logs[currentStep];
-      progressEl.style.width = `${log.progress}%`;
-      statusEl.textContent = log.msg;
-      currentStep++;
-      setTimeout(runLoader, 1000); // 1s per step (4s total)
-    } else {
-      if (enterBtn) {
-        enterBtn.classList.add('ready');
-      }
-      // Hold on screen for 2.5s after 100% so full name stays visible
-      setTimeout(() => {
-        dismissSplash();
-      }, 2500);
-    }
-  }
-
-  // Prevent scroll while splash is active
+  // Prevent scroll while splash is visible
   document.body.style.overflow = 'hidden';
-  setTimeout(runLoader, 200);
 }
 
-/* 2. DYNAMIC PARTICLE CANVAS BACKGROUND (CYBER NODES & GRID) */
+/* 2. MULTI-PAGE NAVIGATION & TAB SWITCHING SYSTEM */
+window.switchPage = function(pageId, event) {
+  if (event) event.preventDefault();
+
+  const pages = document.querySelectorAll('.page');
+  const targetPage = document.getElementById(`${pageId}-page`);
+
+  if (!targetPage) return;
+
+  // Deactivate all pages
+  pages.forEach(p => p.classList.remove('active'));
+
+  // Activate target page
+  targetPage.classList.add('active');
+
+  // Update navigation link highlighting
+  const navLinks = document.querySelectorAll('#nav-links a');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === `#${pageId}`) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // Sync browser URL hash
+  if (window.location.hash !== `#${pageId}`) {
+    history.pushState(null, '', `#${pageId}`);
+  }
+
+  // Scroll to top of page smoothly
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Close mobile nav menu if open
+  const navLinksEl = document.getElementById('nav-links');
+  if (navLinksEl) navLinksEl.classList.remove('active');
+};
+
+/* Handle initial URL hash on page load */
+function handleInitialHash() {
+  const hash = window.location.hash.replace('#', '');
+  const validPages = ['home', 'about', 'skills', 'experience', 'projects', 'credentials', 'education', 'contact'];
+
+  if (hash && validPages.includes(hash)) {
+    switchPage(hash);
+  } else {
+    switchPage('home');
+  }
+}
+
+/* Listen to browser back/forward navigation */
+window.addEventListener('popstate', () => {
+  handleInitialHash();
+});
+
+/* 3. DYNAMIC PARTICLE CANVAS BACKGROUND (CYBER NODES) */
 function initParticleCanvas() {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
@@ -174,10 +213,10 @@ function initParticleCanvas() {
   animate();
 }
 
-/* 3. HERO DYNAMIC TYPING EFFECT */
+/* 4. HERO DYNAMIC TYPING EFFECT */
 function initTypingEffect() {
-  const typingEl = document.getElementById('typing-text');
-  if (!typingEl) return;
+  const typedEl = document.getElementById('typed-text');
+  if (!typedEl) return;
 
   const roles = [
     'Cyber Security & Threat Analysis',
@@ -194,10 +233,10 @@ function initTypingEffect() {
     const currentRole = roles[roleIdx];
 
     if (isDeleting) {
-      typingEl.textContent = currentRole.substring(0, charIdx - 1);
+      typedEl.textContent = currentRole.substring(0, charIdx - 1);
       charIdx--;
     } else {
-      typingEl.textContent = currentRole.substring(0, charIdx + 1);
+      typedEl.textContent = currentRole.substring(0, charIdx + 1);
       charIdx++;
     }
 
@@ -218,63 +257,14 @@ function initTypingEffect() {
   type();
 }
 
-/* 4. SCROLL REVEAL ANIMATIONS */
-function initScrollReveals() {
-  const targets = document.querySelectorAll(
-    '.hero-metrics-grid, .about-grid, .skills-grid, .timeline-card, .p-card, .cred-card, .edu-lead-grid, .contact-grid'
-  );
-
-  targets.forEach(el => el.classList.add('reveal-element'));
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  targets.forEach(el => observer.observe(el));
-}
-
-/* 5. NAVIGATION HIGHLIGHTING & MOBILE MENU */
+/* 5. NAVIGATION MOBILE TOGGLE */
 function initNav() {
-  const navbar = document.getElementById('navbar');
-  const mobileToggle = document.getElementById('mobile-toggle');
+  const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('nav-links');
-  const links = document.querySelectorAll('#nav-links a');
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach(sec => {
-      const top = sec.offsetTop - 100;
-      if (window.scrollY >= top) {
-        current = sec.getAttribute('id');
-      }
-    });
-
-    links.forEach(link => {
-      if (link.getAttribute('href') === `#${current}`) {
-        link.style.color = '#00d8f6';
-      } else if (!link.classList.contains('nav-btn')) {
-        link.style.color = '';
-      }
-    });
-  });
-
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-    });
-
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
     });
   }
 }
@@ -285,7 +275,7 @@ function initBackToTop() {
   if (!backBtn) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 300) {
       backBtn.classList.add('visible');
     } else {
       backBtn.classList.remove('visible');
@@ -297,7 +287,7 @@ function initBackToTop() {
   });
 }
 
-/* 7. FORM SUBMISSION WITH CLEAN EXECUTIVE RESPONSE */
+/* 7. CONTACT FORM SUBMISSION HANDLER */
 window.submitForm = function() {
   const nameInput = document.getElementById('form-name');
   const emailInput = document.getElementById('form-email');
