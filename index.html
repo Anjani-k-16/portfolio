@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anjani Sree Harshita Kanchiraju | SDE & Cyber Security Portfolio</title>
-  <meta name="description" content="Official Portfolio of Anjani Sree Harshita Kanchiraju - Full-Stack Software Development Engineer & Cyber Security Specialist specializing in Zero-Trust Security, Agentic AI, and Secure Systems." />
+  <title>Anjani Sree Harshita Kanchiraju | Portfolio</title>
+  <meta name="description" content="Portfolio of Anjani Sree Harshita Kanchiraju - Full-Stack Software Development Engineer & Cyber Security Specialist." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Stylesheet -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -43,13 +43,11 @@
   <!-- ==================== BACKGROUND PARTICLE CANVAS ==================== -->
   <canvas id="bg-canvas"></canvas>
 
-  <!-- ==================== STICKY NAVIGATION ==================== -->
+  <!-- ==================== NAVIGATION BAR ==================== -->
   <nav id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-brand" onclick="switchPage('home', event)">
-        <span class="brand-code">&lt;AK/&gt;</span>
-        <span class="brand-name-serif">Anjani Sree Harshita Kanchiraju</span>
-        <span class="brand-tag">SEC • SDE</span>
+        Anjani Sree Harshita
       </a>
 
       <ul class="nav-links" id="nav-links">
@@ -58,9 +56,9 @@
         <li><a href="#skills" class="nav-link" onclick="switchPage('skills', event)">Skills</a></li>
         <li><a href="#experience" class="nav-link" onclick="switchPage('experience', event)">Experience</a></li>
         <li><a href="#projects" class="nav-link" onclick="switchPage('projects', event)">Projects</a></li>
-        <li><a href="#credentials" class="nav-link" onclick="switchPage('credentials', event)">Certifications</a></li>
+        <li><a href="#credentials" class="nav-link" onclick="switchPage('credentials', event)">Achievements</a></li>
         <li><a href="#education" class="nav-link" onclick="switchPage('education', event)">Education</a></li>
-        <li><a href="#contact" class="nav-btn" onclick="switchPage('contact', event)">Contact</a></li>
+        <li><a href="#contact" class="nav-link" onclick="switchPage('contact', event)">Contact</a></li>
       </ul>
 
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
@@ -69,67 +67,44 @@
     </div>
   </nav>
 
-  <!-- ==================== MULTI-PAGE SYSTEM WRAPPER ==================== -->
+  <!-- ==================== MULTI-PAGE CONTAINER ==================== -->
   <div class="page-wrapper">
 
-    <!-- 1. HOME / HERO PAGE -->
+    <!-- 1. HERO / HOME PAGE (EXACT PIN-TO-PIN MATCH) -->
     <section id="home-page" class="page active">
-      <div class="hero-orb orb1"></div>
-      <div class="hero-orb orb2"></div>
-      <div class="hero-orb orb3"></div>
-      <div class="hero-lines"></div>
-
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span>OPEN TO OPPORTUNITIES</span>
+      <div class="hero-container">
+        
+        <div class="availability">
+          <span class="status-dot"></span>
+          OPEN TO OPPORTUNITIES
         </div>
 
-        <p class="hero-greeting">Hi there, I'm</p>
+        <p class="greeting">Hi there, I'm</p>
 
-        <h1 class="hero-fullname">
-          Anjani Sree <span class="cyan-gradient">Harshita Kanchiraju</span>
+        <h1 class="main-name">
+          Balla Harika<br />
+          Anjani Sree Harshita Kanchiraju
         </h1>
 
-        <div class="hero-typed-wrap">
-          Specializing in <span id="typed-text" class="typed-text"></span><span class="typed-cursor">|</span>
+        <div class="role-container">
+          <span id="typewriter-role" class="animated-role"></span><span class="typewriter-cursor">|</span>
         </div>
 
-        <p class="hero-subtitle">
-          Software Development Engineer &amp; Cyber Security Specialist at <strong>Shri Vishnu Engineering College for Women</strong> (CGPA 8.65). Engineering high-performance backend architectures, ML-powered phishing detection engines, and multi-agent LangGraph pipelines.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary" onclick="switchPage('projects', event)">VIEW MY WORK <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a href="#contact" class="btn btn-outline" onclick="switchPage('contact', event)">GET IN TOUCH</a>
+        <div class="hero-buttons">
+          <a href="#projects" class="primary-btn" onclick="switchPage('projects', event)">VIEW MY WORK <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a href="#contact" class="secondary-btn" onclick="switchPage('contact', event)">GET IN TOUCH</a>
         </div>
 
-        <div class="hero-metrics-grid">
-          <div class="metric-card">
-            <span class="metric-num">8.65 / 10</span>
-            <span class="metric-lbl">B.Tech CGPA (Cyber Sec)</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num">9+</span>
-            <span class="metric-lbl">SDE &amp; Security Projects</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num">Top 4.6%</span>
-            <span class="metric-lbl">WISER Quantum Program</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num">President</span>
-            <span class="metric-lbl">Toastmasters Club</span>
-          </div>
-        </div>
-
-        <a href="#about" class="hero-scroll-hint" onclick="switchPage('about', event)">
-          <span class="scroll-label">EXPLORE</span>
-          <div class="scroll-chevrons">
-            <span></span><span></span>
-          </div>
-        </a>
       </div>
+
+      <a href="#about" class="explore" onclick="switchPage('about', event)">
+        <span class="explore-label">E X P L O R E</span>
+        <div class="arrows">
+          <span>↓</span>
+          <span>↓</span>
+          <span>↓</span>
+        </div>
+      </a>
     </section>
 
     <!-- 2. ABOUT PAGE -->
@@ -141,7 +116,7 @@
         <div class="about-main">
           <div class="status-pill">
             <span class="status-dot"></span>
-            <span>Available for Full-Time SDE &amp; Cyber Security Opportunities</span>
+            <span>Available for Full-Time SDE &amp; Cyber Security Roles</span>
           </div>
 
           <div class="about-body">
@@ -157,10 +132,10 @@
           </div>
 
           <div class="tags-block">
-            <h5>Core Focus Areas</h5>
+            <h5>Core Domain Focus</h5>
             <div class="tags-row">
               <span class="tag-item">Zero-Trust Architecture</span>
-              <span class="tag-item">AES-256 Cryptography</span>
+              <span class="tag-item">AES-256 GCM Cryptography</span>
               <span class="tag-item">LangGraph Agent Systems</span>
               <span class="tag-item">FastAPI &amp; Node.js Backend</span>
               <span class="tag-item">OWASP Top 10 Defense</span>
@@ -488,7 +463,7 @@
       </div>
     </section>
 
-    <!-- 6. CREDENTIALS PAGE -->
+    <!-- 6. CREDENTIALS / ACHIEVEMENTS PAGE -->
     <section id="credentials-page" class="page">
       <div class="sec-eyebrow">// CERTIFICATIONS &amp; ACHIEVEMENTS</div>
       <h2 class="sec-heading">Certifications &amp; Recognized Achievements</h2>
@@ -550,7 +525,7 @@
       </div>
     </section>
 
-    <!-- 7. EDUCATION & LEADERSHIP PAGE -->
+    <!-- 7. EDUCATION PAGE -->
     <section id="education-page" class="page">
       <div class="sec-eyebrow">// EDUCATION &amp; LEADERSHIP</div>
       <h2 class="sec-heading">Education &amp; Speechweavers Toastmasters</h2>
@@ -646,7 +621,7 @@
               <label>Message</label>
               <textarea id="form-msg" rows="4" placeholder="Hi Anjani, I would like to connect regarding..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary full-width">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            <button type="submit" class="btn primary-btn full-width">Send Message <i class="fa-solid fa-paper-plane"></i></button>
           </form>
           <div id="form-output" class="form-output"></div>
         </div>
@@ -655,32 +630,18 @@
 
   </div>
 
+  <!-- ==================== UNDERSTATED FOOTER ==================== -->
+  <footer class="hero-footer">
+    <div class="footer-divider"></div>
+    <p class="footer-text">
+      Designed &amp; built with <span class="heart">♥</span> by <span class="footer-name">Anjani Sree Harshita Kanchiraju</span>
+    </p>
+  </footer>
+
   <!-- ==================== BACK TO TOP BUTTON ==================== -->
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-status-bar">
-        <span class="status-pulse"></span>
-        <span class="status-text">AVAILABLE FOR FULL-TIME SDE &amp; CYBER SECURITY ROLES | BHIMAVARAM, INDIA</span>
-        <span class="status-sec">OPEN TO RELOCATION &amp; REMOTE</span>
-      </div>
-      <div class="footer-main">
-        <div class="footer-brand">
-          <span class="brand-code">&lt;AK/&gt;</span> Anjani Sree Harshita Kanchiraju
-        </div>
-        <p class="footer-copy">&copy; 2026 Anjani Sree Harshita Kanchiraju. All Rights Reserved.</p>
-        <div class="footer-links">
-          <a href="https://github.com/Anjani-k-16" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://linkedin.com/in/anjani-sree-harshita-kanchiraju" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="mailto:anjanisreeharshita.kanchiraju@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <!-- Script -->
   <script>
@@ -696,6 +657,6 @@
       }
     };
   </script>
-  <script src="app.js?v=2.0"></script>
+  <script src="app.js?v=4.0"></script>
 </body>
 </html>

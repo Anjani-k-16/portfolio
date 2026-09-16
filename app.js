@@ -1,18 +1,18 @@
 /* ==========================================================================
    ANJANI SREE HARSHITA KANCHIRAJU - SDE & CYBER SECURITY PORTFOLIO
-   Multi-Page System Script & Interactive Canvas Engine
+   Pin-to-Pin Reference Specification Logic & Typewriter Engine
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initSplash();
   initParticleCanvas();
-  initTypingEffect();
+  initTypewriter();
   initNav();
   initBackToTop();
   handleInitialHash();
 });
 
-/* 1. SPLASH SCREEN ANIMATION & ENTRY FLOW */
+/* 1. ANIMATED SPLASH INTRO & ENTRY FLOW */
 window.enterPortfolio = function(event) {
   if (event) {
     event.preventDefault();
@@ -32,10 +32,9 @@ function initSplash() {
 
   if (!splash || !progressFill) return;
 
-  // Prevent scroll while splash screen is visible
   document.body.style.overflow = 'hidden';
 
-  // Animate progress bar fill over 1.2 seconds and reveal Hero Landing page
+  // Animate progress bar fill over 1.2 seconds
   let width = 0;
   const interval = setInterval(() => {
     width += 5;
@@ -43,14 +42,62 @@ function initSplash() {
 
     if (width >= 100) {
       clearInterval(interval);
-      setTimeout(() => {
-        window.enterPortfolio();
-      }, 350);
+      if (skipBtn) {
+        skipBtn.classList.add('ready');
+      }
     }
   }, 25);
 }
 
-/* 2. MULTI-PAGE NAVIGATION & TAB SWITCHING SYSTEM */
+/* 2. PIN-TO-PIN TYPEWRITER ANIMATION ENGINE */
+function initTypewriter() {
+  const roleEl = document.getElementById('typewriter-role');
+  if (!roleEl) return;
+
+  const roles = [
+    "Machine Learning Enthusiast",
+    "Full-Stack Developer",
+    "Cyber Security & Threat Specialist",
+    "Agentic AI & LangGraph Architect",
+    "2x Hackathon Winner 🏆",
+    "Software Developer"
+  ];
+
+  let roleIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+
+  function typeRole() {
+    const currentRole = roles[roleIdx];
+
+    if (!isDeleting) {
+      roleEl.textContent = currentRole.substring(0, charIdx + 1);
+      charIdx++;
+
+      if (charIdx === currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeRole, 1400); // Pause after full typing
+        return;
+      }
+    } else {
+      roleEl.textContent = currentRole.substring(0, charIdx - 1);
+      charIdx--;
+
+      if (charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        setTimeout(typeRole, 300); // Pause before next word
+        return;
+      }
+    }
+
+    setTimeout(typeRole, isDeleting ? 45 : 80);
+  }
+
+  typeRole();
+}
+
+/* 3. MULTI-PAGE NAVIGATION & TAB SWITCHING SYSTEM */
 window.switchPage = function(pageId, event) {
   if (event) event.preventDefault();
 
@@ -81,10 +128,10 @@ window.switchPage = function(pageId, event) {
     history.pushState(null, '', `#${pageId}`);
   }
 
-  // Scroll to top of page smoothly
+  // Scroll smoothly to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // Close mobile nav menu if open
+  // Close mobile navigation menu if open
   const navLinksEl = document.getElementById('nav-links');
   if (navLinksEl) navLinksEl.classList.remove('active');
 };
@@ -101,12 +148,9 @@ function handleInitialHash() {
   }
 }
 
-/* Listen to browser back/forward navigation */
-window.addEventListener('popstate', () => {
-  handleInitialHash();
-});
+window.addEventListener('popstate', handleInitialHash);
 
-/* 3. DYNAMIC PARTICLE CANVAS BACKGROUND (CYBER NODES) */
+/* 4. BACKGROUND PARTICLE CANVAS (ATMOSPHERIC POINT CLOUD) */
 function initParticleCanvas() {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
@@ -114,20 +158,7 @@ function initParticleCanvas() {
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];
-  const particleCount = Math.min(Math.floor(window.innerWidth / 20), 65);
-  const connectionDist = 120;
-
-  let mouse = { x: null, y: null, radius: 150 };
-
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  window.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
+  const particleCount = Math.min(Math.floor(window.innerWidth / 22), 50);
 
   function resize() {
     width = canvas.width = window.innerWidth;
@@ -141,10 +172,10 @@ function initParticleCanvas() {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 1.8 + 1;
-      this.color = Math.random() > 0.4 ? 'rgba(0, 216, 246, ' : 'rgba(16, 185, 129, ';
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.radius = Math.random() * 1.5 + 0.8;
+      this.alpha = Math.random() * 0.5 + 0.2;
     }
 
     update() {
@@ -153,24 +184,12 @@ function initParticleCanvas() {
 
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
-
-      // Mouse reactivity
-      if (mouse.x && mouse.y) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < mouse.radius) {
-          const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 1.5;
-          this.y -= (dy / dist) * force * 1.5;
-        }
-      }
     }
 
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color + '0.7)';
+      ctx.fillStyle = `rgba(216, 170, 66, ${this.alpha})`;
       ctx.fill();
     }
   }
@@ -181,76 +200,14 @@ function initParticleCanvas() {
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < connectionDist) {
-          const alpha = (1 - dist / connectionDist) * 0.15;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0, 216, 246, ${alpha})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
-    }
-
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
     requestAnimationFrame(animate);
   }
 
   animate();
-}
-
-/* 4. HERO DYNAMIC TYPING EFFECT */
-function initTypingEffect() {
-  const typedEl = document.getElementById('typed-text');
-  if (!typedEl) return;
-
-  const roles = [
-    'Cyber Security & Threat Analysis',
-    'Full-Stack Software Engineering',
-    'Agentic AI & LangGraph Workflows',
-    'Toastmasters Executive Leadership'
-  ];
-
-  let roleIdx = 0;
-  let charIdx = 0;
-  let isDeleting = false;
-
-  function type() {
-    const currentRole = roles[roleIdx];
-
-    if (isDeleting) {
-      typedEl.textContent = currentRole.substring(0, charIdx - 1);
-      charIdx--;
-    } else {
-      typedEl.textContent = currentRole.substring(0, charIdx + 1);
-      charIdx++;
-    }
-
-    let delay = isDeleting ? 40 : 80;
-
-    if (!isDeleting && charIdx === currentRole.length) {
-      delay = 1800; // Pause at full text
-      isDeleting = true;
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      roleIdx = (roleIdx + 1) % roles.length;
-      delay = 400;
-    }
-
-    setTimeout(type, delay);
-  }
-
-  type();
 }
 
 /* 5. NAVIGATION MOBILE TOGGLE */
@@ -293,7 +250,7 @@ window.submitForm = function() {
   const name = nameInput ? nameInput.value : 'Visitor';
 
   if (out) {
-    out.style.color = '#10b981';
+    out.style.color = '#3bd6a0';
     out.textContent = `Thank you ${name}! Your message has been received. I will get back to you shortly.`;
 
     if (nameInput) nameInput.value = '';
