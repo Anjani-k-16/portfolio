@@ -55,12 +55,12 @@ function initTypewriter() {
   if (!roleEl) return;
 
   const roles = [
-    "Machine Learning Enthusiast",
-    "Full-Stack Developer",
     "Cyber Security & Threat Specialist",
+    "Full-Stack Software Engineer",
     "Agentic AI & LangGraph Architect",
-    "2x Hackathon Winner 🏆",
-    "Software Developer"
+    "Myntra HackerRamp Top 100",
+    "WISER Quantum Program Top 4.6%",
+    "Toastmasters Executive President"
   ];
 
   let roleIdx = 0;
