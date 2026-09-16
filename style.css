@@ -226,7 +226,7 @@ body {
   text-decoration: none;
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 17px;
+  font-size: clamp(14px, 1.5vw, 17.5px);
   white-space: nowrap;
   color: var(--cyber-cyan);
   letter-spacing: 0.5px;
