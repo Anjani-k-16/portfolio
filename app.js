@@ -189,7 +189,7 @@ function initParticleCanvas() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(216, 170, 66, ${this.alpha})`;
+      ctx.fillStyle = `rgba(0, 216, 246, ${this.alpha})`;
       ctx.fill();
     }
   }
